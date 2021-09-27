@@ -1,0 +1,142 @@
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title> Login </title>
+
+     <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            outline: none;
+
+        }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        .container-wrapper{
+            display: flex;
+            flex-wrap: wrap;
+            padding: 2rem 0;
+        }
+
+        .left-container{
+            width: 50%;
+            border: 1px solid red;
+            padding: 5rem;
+        }
+        
+        @media only screen and (min-width: 600px) {
+            .right-container{
+            width: 50%;
+            border: 1px solid rgb(25, 0, 255);
+            background-image: url("https://unsplash.it/500");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+        }
+
+        @media only screen and (max-width: 600px){
+            body{
+            background-image: url("https://i.pinimg.com/originals/0b/9a/56/0b9a569deef6839153414ac47cc4e442.gif");
+            background-repeat: no-repeat;
+            background-position: top left;
+            background-size: cover;
+            }
+            button,.left-container{
+                border: none;
+            }
+            .left-container{
+                width: 60%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: #d9e0e4;
+                height: 500px;
+                border-radius: 3%;
+            }
+            .form-wrapper{
+                width:80%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            h2,label,input{
+                margin-bottom: 1rem;
+            }
+            input{
+                border-bottom: 1px rgb(0, 0, 0) solid;
+                border-top: none;
+                border-right: none;
+                border-left: none;
+                background-color: transparent;
+            }
+            button.btn-log{
+                margin: 1rem 0;
+                padding: .85rem 2rem;
+                width: 100%;
+                background-color: #000;
+            }
+            button.btn-log a{
+                color:#ffffff;
+            }
+            button.btn-log:hover{
+                background-color: #175fe4;
+                transition: 0.5s;
+            }
+        }
+       
+
+
+     </style>
+
+ </head>
+ <body>
+
+    <div class="container-wrapper">
+    <div class="left-container">
+        <div class="form-wrapper">
+            <h2>Login</h2>
+            <form action="" method="post">
+            <!-- {% csrf_token %}  -->
+    
+            <label for="Email">Email</label><br>
+            <input type="text" name="email" placeholder="Enter Your Username" required> <br>
+    
+            <label for="password">Password</label><br>
+            <input type="password" name="password" id="" placeholder="Enter your password" required> <br>
+    
+            <button type="submit" class="btn-log">
+                <a href=""> Login </a> 
+            </button>
+        </form>
+
+        <p>
+            Don't Have an Account?  <a href="">Sign up here</a>
+         </p> 
+     </div>
+
+     
+    </div>
+    
+   
+    <div class="right-container">
+        <div class="bg-figure">
+            <!-- bg figure from css -->
+        </div>
+    </div>
+</div>
+     
+ </body>
+ </html>
