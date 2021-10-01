@@ -1,0 +1,30 @@
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title> Create User </title>
+ </head>
+ <body>
+
+
+    <h1>Create A New User Detail</h1>
+    <!-- making form -->
+    <form action="" method="post">
+        
+        {% csrf_token %}
+        {{ form }} 
+
+        <br>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+     <a href="{% url 'crud:list' %}">CRUD Create</a>
+     
+ </body>
+ </html>

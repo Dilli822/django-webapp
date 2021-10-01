@@ -1,0 +1,130 @@
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title> User info List </title>
+
+     <style>
+
+         a:visited{
+             color:rgb(0, 0, 0);
+         }
+         table{
+             width: 100%;
+             border: 1px solid rgb(138, 129, 128);
+             text-align: center;
+         }
+         table th{
+            border: 1px solid rgb(36, 35, 35);
+         }
+         table tr td{
+             border: 1px solid rgb(114, 102, 97);
+             padding: .5rem;
+
+         }
+
+         /* alerntaives color */
+         tr:nth-child(even){
+             background-color: rgb(2, 188, 221);
+             color: #ffffff;
+         }
+     </style>
+ </head>
+ <body>
+     
+    
+    <h1>List of All Users</h1>
+
+    <h2>
+        <a href="/crud/create/">Create New</a>
+    </h2>
+    <!-- Table of All Users -->
+    <!-- showing first middle last name and email only to users -->
+    <table>
+        <tr>
+            <th>S.N.</th>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+
+           <!-- Static table's data -->
+         <!-- <tr>
+            <td>Static 1</td>
+            <td>Ram</td>
+            <td>---</td>
+            <td>Bahadur</td>
+            <td>ram@gmail.com</td>
+            <td>
+                <button>
+                    <a href="/crud/detail/{{ u.id }}">Detail</a>
+                </button>
+            </td>
+        </tr>  -->
+
+           <!-- Static table's data -->
+           <!-- <tr>
+            <td>static 2</td>
+            <td>Ram</td>
+            <td>---</td>
+            <td>Bahadur</td>
+            <td>ram@gmail.com</td>
+           
+        </tr> -->
+
+
+    <!-- let's store dynamic datas in the table -->
+    {% for u in data %} 
+    <!-- looping data in u  -->
+    <tr>
+        <!-- we are iterating data here -->
+        <td>{{ u.id }}</td>
+        <td>{{ u.first_name }}</td>
+        <!-- conditions for middle name -->
+        <td>  {% if u.middle_name %}
+            <!-- middle name found -->
+            {{ u.middle_name }}
+        {% else %} 
+            <!-- middle name not found -->
+            ---
+        {% endif %}
+        </td>
+        <td>{{ u.last_name }}</td>
+        <td>{{ u.email }}</td>
+        <td>
+            <button>
+                <!-- hardcore static type url -->
+                <!-- <a href="/crud/detail/{{ u.id }}">Detail</a> -->
+                <!-- more dynamic type of url link -->
+                <a href=" {% url 'crud:detail' u.id  %}">Details</a>
+            </button>
+
+            <button>
+                <!-- <a href="/crud/update/{{ u.id }}"> Update </a> -->
+                <!-- namespace dynamic urls -->
+                <a href="{% url 'crud:update' u.id %}"> Update </a>
+
+            </button>
+
+            <button>
+                <!-- <a href="/crud/delete/{{ u.id }}"> Delete </a> -->
+                <a href="{% url 'crud:delete' u.id %}"> Delete </a>
+            </button>
+        </td>
+
+    </tr>
+
+    {% endfor %}
+
+
+  </table>
+
+
+ </body>
+ </html>
