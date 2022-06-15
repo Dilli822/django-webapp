@@ -1,0 +1,75 @@
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title> Create User </title>
+
+    <style>
+
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+    .form-container{
+         max-width: 400px;
+         display: block;
+         margin: 0 auto;
+        }
+
+        .form-container #id_bio,
+        .form-container input{
+            margin: 0.5rem 0;
+            width: 100%;
+            min-height: 25px;
+        }
+        .form-container button{
+            width: 100%;
+            padding: 0.5rem;
+        }
+        .main-container{
+            display: block;
+            max-width: 350px;
+            margin: 2em auto;
+            padding: 1rem;
+            box-shadow: 2px 1px 2px 3px #ccbcbc;
+            background-color: #fff;
+        }
+        button a{
+            text-decoration: none;
+            color: #000;
+        }
+
+        button{
+            background-color: g;
+        }
+
+     </style>
+ </head>
+ <body>
+
+    <div class="main-container">
+    <h1 style="text-align: center;">Create A New User Detail</h1>
+    <!-- making form -->
+    <div class="form-container">
+    <form action="" method="post">
+        
+        {% csrf_token %}
+        {{ form }} 
+
+        <br> <br>
+
+        <button type="submit">Submit</button>
+        <br> <br>
+    </form>
+
+    <button> <a href="{% url 'crud:list' %}"> View Users List </a> </button>
+    
+  </div>
+ </div>
+     
+ </body>
+ </html>

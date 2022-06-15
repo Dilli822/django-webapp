@@ -1,0 +1,49 @@
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title> SignUp Form </title>
+
+     <style>
+        .main-container{
+            display: block;
+            margin: 0 auto;
+            max-width: 250px;
+            margin-top: 10%;
+            padding: 2rem;
+            box-shadow: 2px 1px 2px 3px #615c5c;
+            background-color: #fff;
+        }
+
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        button,
+        .main-container input{
+            width: 100%;
+            padding: 0.25rem;
+        }
+     </style>
+ </head>
+ <body>
+
+    <div class="main-container">
+    <h2>SignUp</h2>
+
+    <form action="" method="post">
+    {% csrf_token %} 
+    {{ form.as_p }}
+    <button type="submit">
+        SignUp
+    </button> <br>
+    <div style="margin-top: 0.85rem">Already Have an Guest Account?</div>
+    <button style="margin-top: 0.25rem"><a href="/accounts/login">Login/Sign in</a></button>
+    </form>
+    </div>
+     
+ </body>
+ </html>

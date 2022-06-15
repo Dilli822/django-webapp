@@ -1,0 +1,117 @@
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title> Profile View Page </title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+     <style>
+
+         .container{
+             display: flex;
+             justify-content: center;
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+         }
+
+        .container-wrapper figure {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            text-align: center;
+            background-color: bisque;
+        }
+
+        .container-wrapper i{
+            font-size: 8rem;
+            margin-top: 20px;
+        }
+
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .main-container input, .container-wrapper form p , .signUp button, 
+        .container-wrapper button, .container-wrapper select{
+            width: 100%;
+            margin: 0.2rem 0;
+            padding: 0.5rem;
+        }
+        button a{
+            text-decoration: none;
+            color: #000;
+        }
+
+
+     </style>
+ </head>
+ <body>
+
+
+    <div class="container">
+
+        <div class="container-wrapper">
+
+            <figure>
+                <i class="fas fa-user"></i>
+            </figure>
+
+     <h2>
+         This is {{ request.user}}'s Profile!
+     </h2>
+     User Name: 
+     {{ request.user }}<br>
+     <!-- Email: {{ request.user.email}} <br>
+     name: {{ request.user.get_full_name }} -->
+     {% if request.user.is_superuser %}
+     <span> Position: Admin </span> <br>
+     <button>
+        <a href="/accounts/guest/">
+           View as Guest
+       </a>
+    </button>
+    
+     <button > 
+        <a href="/crud/list"> View User Lists </a> 
+        </button>
+
+        <button > 
+            <a href="/crud/create/"> Register New User </a> 
+            </button>
+     {% else %} 
+     Position: Guest
+     
+     {% endif %}
+     
+     
+     <br>
+     <br>
+
+ 
+
+     <button>
+         <a href="/accounts/logout/">
+            logout
+
+        </a>
+     </button>
+
+    <!-- {% if user == request.user %}
+      <button>
+        <a href="{}">Delete</a> <br>
+       </button>
+       {% else %} 
+       You Cannot Delete this! -->
+    {% endif %} 
+</div>
+
+</div>
+
+ </body>
+ </html>

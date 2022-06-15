@@ -1,0 +1,104 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Accounts Login</title>
+
+    <style>
+
+        body{
+            /* background-image: url('https://unsplash.it/900'); */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-color: #eeeeee;
+        }
+        .main-container{
+            display: block;
+            margin: 0 auto;
+            max-width: 645px;
+            margin-top: 10%;
+            padding: 2rem;
+            
+        }
+
+        .container-wrapper{
+            display: block;
+            max-width: 350px;
+            margin: 0 auto;
+            padding: 1rem;
+            box-shadow: 2px 1px 2px 3px #927777;
+            background-color: #fff;
+        }
+
+        .container-wrapper h2,h3{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        *,
+        .container-wrapper label{
+            font-family: sans-serif;
+        }
+        .container-wrapper input{
+            min-height: 25px;
+        }
+        select,
+        button,
+        .signUp button{
+            padding: 0.5rem;
+        }
+        button a{
+            text-decoration: none;
+            color: #000;
+        }
+
+        .main-container input, .container-wrapper form p , .signUp button, 
+        .container-wrapper form button, .container-wrapper select{
+            width: 100%;
+            margin: 0.2rem 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="container-wrapper">
+            <h2> Biometric Door Lock System </h2>
+            <h3>Login </h3>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p}} <br>
+
+
+            <select name="" id="">
+            <option value="Guest">Guest</option>
+            <option value="Admin">Admin</option>
+             </select>
+        
+        <button type="submit">
+            Login
+        </button>
+
+        <button>
+            <a href="#">View Logged  Users Data</a>
+        </button>
+
+    </form>
+
+    <h5>Don't have account?</h5>
+        <div class="signUp"> Click on button to signup 
+        <button>
+        <a href="/accounts/signup">Signup For Guest Only!</a>
+        </button>
+        </div>
+
+  </div>
+</div>
+
+    
+</body>
+</html>

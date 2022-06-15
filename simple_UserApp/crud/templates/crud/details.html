@@ -1,0 +1,70 @@
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title> Details </title>
+
+     <style>
+         .main-container{
+            display: block;
+            margin: 0 auto;
+            max-width: 300px;
+            margin-top: 10%;
+            padding: 2rem;
+            box-shadow: 2px 1px 2px 3px #615c5c;
+            background-color: #fff;
+            overflow: auto;
+         }
+
+         *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .main-container input, .container-wrapper form p , .signUp button, 
+        .main-container button, .container-wrapper select{
+            width: 100%;
+            margin: 0.2rem 0;
+            padding: 0.5rem;
+        }
+
+        .main-container article{
+            line-height: 29px;
+        }
+
+        button a{
+            text-decoration: none;
+            color: #000;
+        }
+     </style>
+ </head>
+ <body>
+
+    <div class="main-container">
+    <h1>Details of the User </h1>
+
+    <article>
+
+
+    <!-- passing  the user_obj here from views -->
+    First Name: {{ user_obj.first_name }} <br>
+
+    Middle Name: {{ user_obj.middle_name }} <br>
+
+    Last Name: {{ user_obj.last_name }} <br>
+
+    Email:   {{ user_obj.email }} <br>
+
+    DOB: {{ user_obj.dob }} <br>
+
+    Bio: {{ user_obj.bio }} <br>
+    </article>
+    <button>
+        <a href="/crud/list/"> Back to List Page</a>
+    </button>
+    </div>
+ </body>
+ </html>
